@@ -1,29 +1,55 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" isELIgnored="false" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+    <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Login page</title>
-</head>
-<body>
-<div class="container">
-  <h2>Vertical (basic) form</h2>
-  <form action="/action_page.php">
-    <div class="form-group">
-      <label for="Username">Username:</label>
-      <input type="Username" class="form-control" placeholder="Username" name="Username">
-    </div>
-    <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-    </div>
-    <div class="checkbox">
-      <label><input type="checkbox" name="remember"> Remember me</label>
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
-</div>
+<title>Log In</title>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: #ffdd99">
+<jsp:include page="header.jsp" />
+  <div class="container">
+
+
+<c:if test="${error=='true'}">
+
+  <div class="errorblock">
+   Your login attempt was not successful, try again.
+ 
+  </div>
+</c:if>
+ <c:if test="${not empty logoutmsg }">
+   <div class="logoutblock">
+   <c:out value="${logoutmsg}" />
+   </div>
+</c:if>
+<form role="form" action="<c:url value='login' />
+" method="post" >
+  <div class="form-group">
+ 
+    <label for="username">UserName:</label>
+    <input style="width: 20%;" type="text" id="username" name="username"  class="form-control" />
+  </div>
+<div class="form-group">
+    <label for="password">Password:</label>
+    <input style="width: 20%;" type="password" id="password" class="form-control" name="password" />
+  </div>
+<button type="submit"  class="btn btn-default" >Submit</button>
+</form>
+<h4>
+Not A User ? <a href="Register">Sign Up Here</a></h4>
+</div>
 </body>
 </html>

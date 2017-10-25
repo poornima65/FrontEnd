@@ -36,42 +36,67 @@ ${msg}
          <table>
 				
 <tr>
-               <td><form:label path = "name">Name</form:label></td>
-               <td><form:input path = "name" /></td>
-               <td><form:errors cssClass="errmsg" path="name" />   </td>
+               <td><form:label path ="name">Name</form:label></td>
+               <td><form:input cssClass="form-control" path = "name" /> <br/><br/></td>
+               <td><form:errors cssClass="errmsg" path="name" /> </td>
+               
+               
             </tr>
 
 <tr>
                <td><form:label path = "description">Description</form:label></td>
-               <td><form:input path = "description" /></td>
+               <td><form:input  cssClass="form-control" path ="description" /> </br> </br> </td>
+               <td><form:errors cssClass="errmsg" path="description" />   </td>
             </tr>
 <tr>
                <td colspan = "2">
+               <center>
                <c:if test="${isEditing}" >
                   <input type = "submit" value = "Update"/>
                   </c:if>
                      <c:if test="${not isEditing}" >
-                  <input type = "submit" value = "Save"/>
+               
+                   <button type="submit" class="btn btn-primary btn-sm">
+                    <span class="glyphicon glyphicon-save"></span>
+                   SAVE</button>
+                   
                   </c:if>
+                  </center>
                </td>
+               <br/><br/>
             </tr>
 </table>
 </form:form>
-      <table>
+
+<br/><br/>
+      <table class="table table-bordered">
 <tr>
       
       <th>Name</th>
       
       <th>Description</th>
+      <th></th>
+      <th></th>
       </tr>
-<c:forEach var="cat" items="${supplierList}" >
+<c:forEach var="sup" items="${supplierList}" >
+
 <tr>
-      <td>${cat.id}</td>
-      <td>${cat.name}</td>
      
-      <td>${cat.description}</td>
-      <td><a href="<c:url value='/admin/Supplier/update/${cat.id}' /> ">Update</a></td>
-      <td><a href="<c:url value='/admin/Supplier/delete/${cat.id}' /> ">Delete</a></td>
+      <td>${sup.name}</td>
+     
+      <td>${sup.description}</td>
+      <td>
+      
+       <a href="<c:url value='/admin/Supplier/update/${sup.id}'/> " class="btn btn-info btn-sm">
+          <span class="glyphicon glyphicon-pencil"></span> Edit
+        </a>
+        
+   <td>
+     
+     <a href="<c:url value='/admin/Supplier/delete/${sup.id}' />" class="btn btn-info btn-sm">
+          <span class="glyphicon glyphicon-trash"></span> Delete
+        </a>
+      </td>
       </tr>
 </c:forEach>
       </table>

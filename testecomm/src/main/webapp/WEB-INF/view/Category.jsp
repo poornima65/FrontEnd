@@ -45,7 +45,8 @@ ${msg}
 
 <tr>
                <td><form:label path = "description">Description &nbsp;</form:label></td>
-               <td><form:input  cssClass="form-control" path ="description" /></br></br></td>
+               <td><form:input  cssClass="form-control" path ="description" /> </br> </br> </td>
+               <td><form:errors cssClass="errmsg" path="description" />   </td>
             </tr>
 <tr>
                <td colspan = "2">
@@ -55,13 +56,9 @@ ${msg}
                   </c:if>
                      <c:if test="${not isEditing}" >
                
-                   <button type="button" class="btn btn-primary btn-sm">
+                   <button type="submit" class="btn btn-primary btn-sm">
                     <span class="glyphicon glyphicon-save"></span>
                    SAVE</button>
-                    
-        
-                   
-                   
                    
                   </c:if>
                   </center>
