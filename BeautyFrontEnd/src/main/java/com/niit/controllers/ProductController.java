@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.niit.dao.CategoryDao;
 import com.niit.dao.ProductDao;
 import com.niit.dao.SupplierDao;
-import com.niit.models.Category;
+
 import com.niit.models.Product;
 
 @Controller

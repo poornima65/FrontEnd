@@ -3,6 +3,7 @@
 
  <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
  <%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
+ <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -109,7 +110,7 @@ color:red;
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-
+</br></br>
 <jsp:include page="footer.jsp"/>
 
 </body>

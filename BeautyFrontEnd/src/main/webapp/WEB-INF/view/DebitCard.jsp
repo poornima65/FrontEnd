@@ -18,9 +18,10 @@
 <jsp:include page="header.jsp" />
 
 <form:form cssClass="form-inline" method = "POST" modelAttribute="debit" action = "${formaction}">
-
+          
+          <centre>
          <table class="Container">
-			<centre>	
+		
           
          <tr>
                <td><form:label   path = "cardNo">Card Number</form:label></td>
@@ -64,6 +65,8 @@
                       
            
            </table>
+          
+           
             <tr>
                    <button type="submit" class="btn btn-primary btn-sm">
                     <span class="glyphicon glyphicon-save"></span>

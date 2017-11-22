@@ -118,6 +118,7 @@ ${msg}
 </security:authorize>
 <br/><br/>
       <table class="container">
+      <table class="table table-bordered">
     
       <thead>
 <tr>
@@ -159,7 +160,7 @@ ${msg}
         </a>
      
       </td>
-     </td>
+     
      </security:authorize>
      
      
@@ -193,9 +194,8 @@ ${msg}
 
 </thead>
       </table>
-      
-  
-      
+      </table>
+      </br>
        <jsp:include page="footer.jsp"/>
 </body>
 </html>

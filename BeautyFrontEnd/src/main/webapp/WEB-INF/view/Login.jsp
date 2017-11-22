@@ -54,6 +54,7 @@
 Not A User ? <a href="Register">Sign Up Here</a></h4>
 </center>
 </div>
+</br></br>
  <jsp:include page="footer.jsp"/>
 </body>
 </html>

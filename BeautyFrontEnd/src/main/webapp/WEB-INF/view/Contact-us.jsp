@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+    <%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
+   <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head> 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
 		<!-- Website CSS style -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -17,69 +18,53 @@
 		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 
 		<title>contact here</title>
+		
+		<style>
+
+body {
+    background-image: url("resources/images/bg2.jpg");
+    
+}
+
+</style>
+		
 	</head>
 <body>
 <jsp:include page="header.jsp" />
   
-<<div class="container">
- <div class="row">
-<<div class="col-md-2">
-			<form>
-			<div id="contact-form" class="form-container" data-form-container>
-			<div class="row">
-	       <div class="form-title">
-				<h4 style="color: black; margin: initial; margin-bottom: 10px;">Contact us</h4><hr></br>	
-				</div>
-			</div>
-			
-			
-<div class="input-container">
-<div class="col-md-3">
-<div class="col-md-6">
- <div class="row myborder">
-
-<div class="input-group margin-bottom-20">
- <span class="input-group-addon"><i class="glyphicon glyphicon-Customer mycolor"></i></span>
-<span class="input-status" data-toggle="tooltip" data-placement="top" title="Input Your First and Last Name."> </span>
-<input type="text" data-min-length="8" placeholder="Full Name">
-	
+<div class="jumbotron jumbotron-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-lg-6">
+                <h1 class="h1">
+                    Contact us <small>Feel free to contact us</small></h1>
+            </div>
+        </div>
+    </div>
 </div>
-				
-				</br></br>
-				
-				
-<div class="row">
-<span class="req-input">
-<span class="input-status" data-toggle="tooltip" data-placement="top" title="Please Input Your Email."> </span>
-<input type="email" placeholder="Email">
-</span>
 
-				</br></br>
-				
-				<div class="row">
-					<span class="req-input">
-						<span class="input-status" data-toggle="tooltip" data-placement="top" title="Please Input Your Phone Number."> </span>
-						<input type="tel" placeholder="Phone Number">
-					</span>
-				</div>
-				
-				</br></br>
-				<div class="row">
-					<span class="req-input message-box">
-						<span class="input-status" data-toggle="tooltip" data-placement="top" title="Please Include a Message."> </span>
-						<textarea type="textarea" data-min-length="10" placeholder="Message"></textarea>
-				</div>
-				</br></br>
-				<div class="row submit-row">
-					 <button type="submit" class="btn btn-primary btn-sm">
-                    <span class="glyphicon glyphicon-save"></span>
-                   SAVE</button>
                    
-				</div>
-			</div>
-			</div>
-			</form>
-		</div>
+         
+        <div class="col-md-6">
+            <form>
+            <legend><span class="glyphicon glyphicon-globe"></span> Our office</legend>
+             <address>
+                <strong>Twitter, Inc.</strong><br>
+                795 Folsom Ave, Suite 600<br>
+                San Francisco, CA 94107<br>
+                <abbr title="Phone">
+                    P:</abbr>
+                (123) 456-7890
+            </address>
+            <address>
+                <strong>Full Name</strong><br>
+                <a href="mailto:#">first.last@example.com</a>
+            </address>
+            </form>
+        </div>
+    </div>
+</div>
+   
 
 </body>
 </html>

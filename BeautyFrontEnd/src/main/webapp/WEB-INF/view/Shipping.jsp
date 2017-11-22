@@ -19,8 +19,8 @@
 <form:form cssClass="form-inline" method = "POST" modelAttribute="shipping" action = "${formaction}">
 
         
-         
-      <table class="table table-bordered">
+         <center>
+      <table class="Container">
 				
            <tr>
                <td><form:label   path = "addressline1">AddressLine1</form:label></td>
@@ -47,7 +47,7 @@
             </tr>
            
            </table>
-           
+           </center>
            <tr>
            <c:if test="${not isEditing}" >
                

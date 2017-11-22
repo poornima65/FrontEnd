@@ -43,7 +43,7 @@ public class CartController {
 	  m.addAttribute("total", totalamt);
 	  if(cartList.isEmpty())
 	  m.addAttribute("msg", "No Product in Cart");
-	  return "Cart";
+	  return "Product";
 	 }
 
 	  // Saving Product
@@ -86,7 +86,7 @@ public class CartController {
 	  m.addAttribute("total", totalamt);
 
 	  m.addAttribute("msg", "cart deleted successfully");
-	  return "Cart";
+	  return "Product";
 	 }
 	 
 
