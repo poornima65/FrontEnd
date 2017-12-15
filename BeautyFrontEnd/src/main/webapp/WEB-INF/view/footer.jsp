@@ -5,8 +5,8 @@
    position: fixed;
    left: 0;
    bottom: 0;
-   width:180%;
-   background-color: red;
+   width:200%;
+   background-color: black;
    color: white;
    text-align: left;
 }
@@ -14,8 +14,9 @@
 </head>
 <body>
 <div class="footer">
-<p>
-Last updated: <%= new java.util.Date()%>
+<p><pre>
+                                               Last updated: <%= new java.util.Date()%>
+</pre>
 </p>
 </div>
 </body>

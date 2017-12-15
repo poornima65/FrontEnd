@@ -17,7 +17,7 @@
 <div>
 ${msg }
 </div>
-<div class="container">
+
  <table class="table table-bordered"> 
  
   
@@ -43,7 +43,20 @@ ${msg }
         
         
        
-        <td>${cart.qty}</td>
+        <td>${cart.qty}
+        
+        <div class="container">
+	<div class="row">
+		<div class="qty-changer">
+            <button class="qty-change">-</button>
+            <input class="qty-input form-group" type="number" value="1"/>
+            <button class="qty-change">+</button>
+        </div>
+	</div>
+</div>
+        
+    </td>
+        
         </tr>
         
        <td>
@@ -53,11 +66,11 @@ ${msg }
         </td>
         <th></th>
         <th></th>
+    </c:forEach>
     
-        </c:forEach>
   <h2>Total Cost :${total}</h2>
   
-  </div>
+ 
         
   </table>
   
@@ -68,6 +81,12 @@ ${msg }
           <span class="glyphicon glyphicon-checkout"></span> CheckOut
         </a>
   </td>
+  <td>
+   <a href="<c:url value='/Product' />" class="btn btn-info btn-sm">
+          <span class="glyphicon glyphicon-shopping"></span> Shopping
+        </a>
+  </td>
+  
   </tr>
 </center>
 

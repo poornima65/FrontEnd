@@ -36,6 +36,16 @@
         <tr>
         <th>Quantity</th>
         <td>${product.qty}</td>
+       
+        <div class="container">
+	<div class="row">
+		<div class="qty-changer">
+            <button class="qty-change">-</button>
+            <input class="qty-input form-group" type="number" value="1"/>
+            <button class="qty-change">+</button>
+        </div>
+	</div>
+</div>
         </tr>
   </table>
 

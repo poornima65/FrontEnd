@@ -23,7 +23,6 @@ import com.niit.models.Cart;
 import com.niit.models.Customer;
 import com.niit.models.DebitCard;
 import com.niit.models.Orders;
-import com.niit.models.Product;
 import com.niit.models.Shipping;
 @Controller
 public class ShippingController {
@@ -64,7 +63,7 @@ public class ShippingController {
 			String email = auth.getName();
 			Customer c = customerDao.getByEmail(email);
 			s.setCustomer(c);
-	shippingDao.save(s);
+	        shippingDao.save(s);
 	
 	  m.addAttribute("debit", new DebitCard());
 	  m.addAttribute("msg", "shipping is successfull");
@@ -74,7 +73,7 @@ public class ShippingController {
 	
 	 
 	 @RequestMapping(value = "/user/DebitCard/save", method=RequestMethod.POST)
-	        public String debitCardsave(@ModelAttribute("debit") @Valid DebitCard d,BindingResult result, Model m ) 
+	        public String debitCardsave(@ModelAttribute("debit") @Valid DebitCard d,BindingResult result, Model m)
 	 {
 		 System.out.println("saving card details....");
 	     if(result.hasErrors())
@@ -95,6 +94,8 @@ public class ShippingController {
 	     m.addAttribute("msg","payment successfull");
 	     List<Cart> cartList = cartDao.getByCustomer(c);
 	     
+	    // m.addAttribute("orders", cartList);
+	     
 	     for (Cart cart : cartList) {
 			Orders orders = new Orders();
 			orders.setCustomer(c);
@@ -102,14 +103,16 @@ public class ShippingController {
 			orders.setQty(cart.getQty());
 			orders.setTotalAmt(cartDao.getTotalAmount(c));
 			orders.setShipping(shippingDao.getByCustomer(c));
+			
+			
 			System.out.println(orders);
 			ordersDao.save(orders);
+			
 		}
-	  
-	   cartDao.deleteByCustomer(c);	
-	    
-	     return "Order";
 	     
+	     cartDao.deleteByCustomer(c);
+	     
+	     return "Order";
 	     
 	 }
 	     

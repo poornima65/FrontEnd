@@ -18,7 +18,6 @@ import com.niit.dao.ProductDao;
 import com.niit.models.Customer;
 import com.niit.models.Product;
 import com.niit.models.Cart;
-import com.niit.models.Category;
 
 @Controller
 public class CartController {
@@ -28,7 +27,7 @@ public class CartController {
 	private CustomerDao customerDao;
 	@Autowired
 	private ProductDao productDao;
-	private Customer c;
+	
 	
 	@RequestMapping("/user/cart")
 	 public String Cart(Model m) {
@@ -43,10 +42,10 @@ public class CartController {
 	  m.addAttribute("total", totalamt);
 	  if(cartList.isEmpty())
 	  m.addAttribute("msg", "No Product in Cart");
-	  return "Product";
+	  return "Cart";
 	 }
 
-	  // Saving Product
+  // Saving Product
 	 @RequestMapping(value = "/user/addToCart/{pid}")
 	 public String save(@PathVariable("pid")  int pid , Model m) {
 		 Product p = productDao.getById(pid);
@@ -64,11 +63,10 @@ public class CartController {
 			List<Cart> cartList = cartDao.getByCustomer(c);
 			
 			Double totalamt = cartDao.getTotalAmount(c);
-			
-		  m.addAttribute("cartList", cartList);
-		  m.addAttribute("total", totalamt);
-	
-	  return "Cart";
+			 m.addAttribute("cartList", cartList);
+			  m.addAttribute("total", totalamt);
+		
+			 return "Cart";
 	 }
 
 	// Deleting Product
@@ -86,10 +84,19 @@ public class CartController {
 	  m.addAttribute("total", totalamt);
 
 	  m.addAttribute("msg", "cart deleted successfully");
-	  return "Product";
+	  return "Cart";
 	 }
 	 
 
+	 @RequestMapping(value = "/user/shopping/${product.productid}", method = RequestMethod.GET)
+	 public String getProduct(@PathVariable("pid") int pid, Model m) {
+	  Product p=productDao.getById(pid);
+	  m.addAttribute("product", p);
+	 
+	  return "Show";
+	 }
+
+	 
 }
 
 
